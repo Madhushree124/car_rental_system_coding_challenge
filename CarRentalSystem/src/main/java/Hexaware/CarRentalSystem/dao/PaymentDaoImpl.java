@@ -55,6 +55,9 @@ public class PaymentDaoImpl implements Paymentdao {
 		pst.setDate(3, payment.getTransactionDate());
 		pst.setDouble(4, payment.getAmount());
 		pst.executeUpdate();
+		
+			
+		
 		return "Payment record inserted successfully";
 	}
 

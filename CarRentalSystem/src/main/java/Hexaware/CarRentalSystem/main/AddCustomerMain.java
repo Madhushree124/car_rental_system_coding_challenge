@@ -22,6 +22,11 @@ public class AddCustomerMain {
 		String email=sc.next();
 		System.out.println("Enter the phone number :");
 		String phoneNumber=sc.next();
+		customer.setCustomerID(customerID);
+		customer.setFirstName(firstName);
+		customer.setLastName(lastName);
+		customer.setEmail(email);
+		customer.setPhoneNumber(phoneNumber);
 		CustomerDao dao=new CustomerDaoImpl();
 		try {
 			System.out.println(dao.addCustomer(customer));

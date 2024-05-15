@@ -30,6 +30,14 @@ public class AddVehicleMain {
 		int passengerCapacity=sc.nextInt();
 		System.out.println("Enter the engine capacity :");
 		int engineCapacity=sc.nextInt();
+		vehicle.setVehicleID(vehicleID);
+		vehicle.setMake(make);
+		vehicle.setModel(model);
+		vehicle.setYear(year);
+		vehicle.setDailyRate(dailyRate);
+		vehicle.setStatus(status);
+		vehicle.setPassengerCapacity(passengerCapacity);
+		vehicle.setEngineCapacity(engineCapacity);
 		VehicleDao dao=new VehicleDaoImpl();
 		try {
 			System.out.println(dao.addVehicleDao(vehicle));
