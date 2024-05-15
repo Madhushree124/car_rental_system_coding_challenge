@@ -1,0 +1,35 @@
+package Hexaware.CarRentalSystem.main;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import Hexaware.CarRentalSystem.dao.LeaseDao;
+import Hexaware.CarRentalSystem.dao.LeaseDaoImpl;
+import Hexaware.CarRentalSystem.exception.LeaseNotFoundException;
+import Hexaware.CarRentalSystem.model.Lease;
+
+public class ShowLeaseByIdMain {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the lease ID :");
+		int leaseID=sc.nextInt();
+		LeaseDao dao=new LeaseDaoImpl();
+		try {
+			List<Lease> LeaseList=dao.showLeaseById(leaseID);
+			for(Lease lease :LeaseList) {
+				System.out.println(lease);
+			}
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} catch (LeaseNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+				
+	}
+}
